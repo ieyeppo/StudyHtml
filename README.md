@@ -19,7 +19,7 @@ HTML 기본학습
     - SUL3
     - SUL4
 
-...
+<code>
 using System.IO;
 
 namespace HelloWorldApp {
@@ -29,8 +29,9 @@ namespace HelloWorldApp {
       // Hello World 10 WOW!
     }
   }
- }
-...
+}
+</code>
+
 ------------------
 
 ## CSS3
