@@ -19,7 +19,7 @@ HTML 기본학습
     - SUL3
     - SUL4
 
-<code>
+``` c#
 using System.IO;
 
 namespace HelloWorldApp {
@@ -30,7 +30,7 @@ namespace HelloWorldApp {
     }
   }
 }
-</code>
+```
 
 ------------------
 
