@@ -34,8 +34,8 @@ namespace HelloWorldApp {
 
 
 -------참조링크
-- .[Microsoft](https://wwww.microsoft.com)
-- .[Naver](https://wwww.naver.com)
+- [Microsoft](https://wwww.microsoft.com)
+- [Naver](https://wwww.naver.com)
 
 ------------------
 
