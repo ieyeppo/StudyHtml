@@ -43,7 +43,7 @@ namespace HelloWorldApp {
 ---------
 
 ![메인](https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/%EB%A9%94%EC%9D%B8.png, "절대경로")
-![메인](/ref_images/메인.png, "상대경로")
+![메인](ref_images/메인.png, "상대경로")
 
 
 
