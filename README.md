@@ -1,7 +1,6 @@
 # HTML 학습 리포지토리
 HTML5 CSS js 학습용 리포지토리
 
-<p><p><p><p><p><p>
 ------------------
 
 ## HTML5
@@ -9,12 +8,15 @@ HTML 기본학습
 
 ### HTML이란?
 개요에 대해서 학습합니다.
+1. Hyper Text Markup Language 정의
+2. HTML 역사
+3. HTML5의 
 
 ------------------
 
 ## CSS3
 CSS 기본 학습
-<br/>
+
 ------------------
 
 ## JavaScript
