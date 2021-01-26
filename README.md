@@ -61,4 +61,4 @@ JavaScript 기본학습
 
 ----------------
 
-문의메일 : <
+문의메일 : <ieyeppo@gmail.com>
