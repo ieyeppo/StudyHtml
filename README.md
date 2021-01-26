@@ -40,11 +40,11 @@ namespace HelloWorldApp {
 - All Cartegory
 ![메인](ref_images/카테고리0.png "상대경로")
 
-- Cartegory
+- Cartegory-Vape Kit
 <img src="https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/카테고리1.png" width = "600" title="상대경로" />
 
 
-- Cartegory Vape Kit
+- Cartegory-Liquids
 <img src="ref_images/카테고리2.png" width = "600" title="상대경로" />
 
 ------------------
