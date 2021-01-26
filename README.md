@@ -36,9 +36,9 @@ namespace HelloWorldApp {
 ---------
 
 ![메인](https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/메인.png "절대경로")
-![메인](ref_images/메인.png "상대경로")
-
-<img src="ref_images/메인.png" width = "400" title="상대경로" />
+![메인](ref_images/카테고리0.png "상대경로")
+<img src="https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/카테고리1.png" width = "600" title="상대경로" />
+<img src="ref_images/카테고리2.png" width = "600" title="상대경로" />
 
 ------------------
 
