@@ -31,10 +31,15 @@ namespace HelloWorldApp {
   }
 }
 ```
-
-이미지 업로드
 ---------
-- 메인페이지
+
+
+
+## Latte Is Horse Project
+
+------------------
+
+- MainPage
 ![메인](https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/메인.png "절대경로")
 
 - All Cartegory
@@ -48,6 +53,7 @@ namespace HelloWorldApp {
 <img src="ref_images/카테고리2.png" width = "600" title="상대경로" />
 
 ------------------
+
 
 
 참조링크
