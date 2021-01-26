@@ -41,7 +41,7 @@ namespace HelloWorldApp {
 
 이미지 업로드
 ---------
-[![LatteIsHorse_MainPage](https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/%EB%A9%94%EC%9D%B8.png)]
+![LatteIsHorse_MainPage](https://github.com/ieyeppo/StudyHtml/blob/main/ref_images/%EB%A9%94%EC%9D%B8.png)
 
 
 
