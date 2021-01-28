@@ -38,4 +38,4 @@
 
 ## HTML5 입력 태그
 
-[이전](https://github.com/hugoMGSung/StudyHtml)
+[이전](https://github.com/ieyeppo/StudyHtml)
