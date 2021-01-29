@@ -1,22 +1,170 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
     <title>CSS3 Selector Basic</title>
     <style>
-        #header h1  { color: red; }
-        #section h1 { color: orange; }
+        #header h2 {
+            color: red;
+        }
+
+        #section h2 {
+            color: orange;
+        }
+        h2:hover {
+            background-color: pink;
+        }
+        h2:active {
+            color:purple;
+        }
+        h2:in-range {
+            color: seagreen;
+        }
+
+        input[type="text"] {
+            color: white;
+            background: pink;
+        }
+
+        input[type="password"] {
+            color: white;
+            background: pink;
+        }
+
+        td select{
+            color: hotpink;
+        }
+
+        .button {
+            color: white;
+            background: hotpink;
+        }
+
+        #footer {
+            width: 800px;
+            margin: 0 auto;
+        }
+
+        input:focus {
+            background-color: hotpink;
+            border-color: lightpink;
+        }
     </style>
 </head>
+
 <body>
     <div id="header">
-        <h1 class="title">Lorem ipsum</h1>
+        <h2 class="title">Lorem ipsum</h2>
         <div id="nav">
-            <h1>Navigation</h1>
+            <h2>Navigation</h2>
         </div>
+        <h3>subTitle</h3>
     </div>
     <div id="section">
-        <h1 class="title">Lorem ipsum</h1>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi risus, sollicitudin eget vehicula sed, eleifend suscipit neque. Proin rhoncus, ante vitae mattis consequat, libero nunc posuere justo, ut laoreet dolor nunc at dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, lectus vestibulum laoreet tincidunt, nisi augue blandit risus, ut vestibulum erat dolor sit amet risus. Praesent semper consectetur mi eget auctor. Nulla facilisi. Duis bibendum massa in dui interdum sed tincidunt massa eleifend.</p>
+        <h2 class="title">Lorem ipsum</h2>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed nisi risus, sollicitudin eget vehicula sed,
+            eleifend suscipit neque. Proin rhoncus, ante vitae mattis consequat, libero nunc posuere justo, ut laoreet
+            dolor nunc at dolor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas dictum, lectus
+            vestibulum laoreet tincidunt, nisi augue blandit risus, ut vestibulum erat dolor sit amet risus. Praesent
+            semper consectetur mi eget auctor. Nulla facilisi. Duis bibendum massa in dui interdum sed tincidunt massa
+            eleifend.</p>
+    </div>
+
+    <form>
+        <fieldset>
+            <legend>회원가입2</legend>
+
+            <table>
+                <tr>
+                    <td><label for="id">ID</label></td>
+                    <td><input id="id" type="text"></td>
+                    <td><input type="button" value="중복확인" class="button" onClick=""></td>
+                </tr>
+                <tr>
+                    <td><label for="pw">PW</label></td>
+                    <td><input id="password" type="password"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="name">이름</label></td>
+                    <td><input id="name" type="text"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="phone">연락처</label></td>
+                    <td><input id="phone1" type="text" size="4">
+                        - <input id="phone2" type="text" size="4">
+                        - <input id="phone3" type="text" size="4"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="email">Email</label></td>
+                    <td>
+                        <input id="email_First" type="text">
+                        @
+                        <select>
+                            <optgroup label="선택">
+                                <option>naver.com</option>
+                                <option>gmail.com</option>
+                                <option>daum.net</option>
+                            </optgroup>
+                        </select>
+                    </td>
+                    <td><input type="button" value="이메일인증" class="button" onClick=""></td>
+                </tr>
+
+                <tr>
+                    <td>성별</td>
+                    <td>
+                        <input id="man" type="radio" name="gender" value="M">
+                        <label for="man">남자</label>
+                        <input id="woman" type="radio" name="gender" value="W">
+                        <label for=woman">여자</label>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td><label for="addressCode">주소코드</label></td>
+                    <td><input id="addressCode" type="text"></td>
+                    <td><input type="button" class="button" value="주소찾기"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="address">주소</label></td>
+                    <td><input id="address" type="text" size="50"></td>
+                </tr>
+                <tr>
+                    <td><label for="addressDetail">상세주소</label></td>
+                    <td><input id="addressDetail" type="text" size="50"></td>
+                </tr>
+
+                <tr>
+                    <td><label for="pw_Find">비밀번호 찾기 질문</label></td>
+                    <td>
+                        <select>
+                            <form:select path="passquestion">
+                                <option value="1">아빠 이름은?</option>
+                                <option value="2">엄마 이름은?</option>
+                                <option value="3">가족 구성원 수는?</option>
+                                <option value="4">처음 키운 애완동물 이름은?</option>
+                                <option value="5">당신의 꿈은?</option>
+                            </form:select>
+                            <form:errors path="passquestion" />
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td><label for="pw_Answer">비밀번호 찾기 답변</label></td>
+                    <td><input id="pw_Answer" type="text"></td>
+                </tr>
+            </table>
+        </fieldset>
+
+    </form>
+    
+    <div id="footer">
+        <button type="button" class="button" onclick="location.href='register_step3.html'">가입완료</button>
     </div>
 </body>
+
 </html>
