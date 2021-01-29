@@ -1,26 +1,52 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>CSS3 Selector Basic Page</title>
     <style>
         #header {
-            width: 800px; margin: 0 auto;
-            background: red;
+            width: 800px;
+            height: 300px;
+            margin: 0 auto;
+            background: pink;
         }
+
         #wrap {
-            width: 800px; margin: 0 auto;
+            width: 800px;
+            margin: 0 auto;
             overflow: hidden;
         }
+
         #aside {
-            width: 200px; float: left;
-            background: blue;
+            width: 200px;
+            float: right;
+            background: violet;
         }
+
         #content {
-            width: 600px; float: left;
-            background: green;
+            width: 600px;
+            float: left;
+            background: yellowgreen;
+        }
+
+        #footer {
+            width: 800px;
+            margin: 0 auto;
+            background: yellow;
+        }
+
+        .fruits { color: white; }
+
+        .item {
+            color: salmon;
+        }
+
+        .footer {
+            background-color: hotpink;
         }
     </style>
 </head>
+
 <body>
     <div id="header">
         <h1>#header 태그</h1>
@@ -28,10 +54,20 @@
     <div id="wrap">
         <div id="aside">
             <h1>#aside 태그</h1>
+            <ul>
+                <li class="fruits"><a href="https://naver.com">사과</a></li>
+                <li><a href="https://google.com">딸기</a></li>
+                <li class="fruits"><a href="https://daum.net">바나나</a></li>
+                <li><a href="https://youtube.com">망고스틴</a></li>
+            </ul>
         </div>
         <div id="content">
-            <h1>#content 태그</h1>
+            <h1 class="footer">#content 태그</h1>
         </div>
     </div>
+    <div id="footer">
+        <h1 class="item">#footer 태그</h1>
+    </div>
 </body>
+
 </html>
