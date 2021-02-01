@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>CSS3 Property Basic</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            position: absolute;
+        }
+
+        .box:nth-child(1) {
+            background-color: rgb(167, 233, 253);
+            left: 10px;
+            top: 10px;
+
+            z-index: 100;
+        }
+
+        .box:nth-child(2) {
+            background-color: rgb(255, 254, 169);
+            left: 230px;
+            top: 230px;
+
+            z-index: 10;
+        }
+
+        .box:nth-child(3) {
+            background-color: rgb(250, 199, 233);
+            left: 120px;
+            top: 120px;
+
+            z-index: 1;
+        }
+
+        body>div {
+            width: 400px;
+            height: 400px;
+            border: 3px solid rgba(233, 226, 226, 0.425);
+
+            position: relative;
+            overflow-y: scroll;
+        }
+
+        h1 {
+            color: hotpink;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Lorem ipsum dolor amet</h1>
+    <div>
+        <div class="box"></div>
+        <div class="box"></div>
+        <div class="box"></div>
+    </div>
+    <h1>Lorem ipsum dolor amet</h1>
+</body>
+
+</html>
