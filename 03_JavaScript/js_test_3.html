@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        function greeting() {
+            alert("Hello World!");
+            console.log("hide log");
+        }
+
+        function f(x) {
+            var result = x * x;
+            console.log(result);
+            document.getElementById('num1_result').value = result;
+        }
+
+        window.onload = function () {
+            var header = document.getElementById("header");
+            console.log(header.innerText);
+
+            //setTimeout(() =>console.log("timer"), 3000);//3초지연
+            header.style.backgroundColor = "pink";
+            header.style.color = "white";
+            header.innerText = "Hello, World!";
+        }
+
+        function getRandColor(min, max) {
+            if (min >= max) return false;
+            return ~~(Math.random() * (max - min + 1)) + min;
+        }
+
+        function changeColor() {
+            var header = document.getElementById("header");
+            var r, g, b, a;
+            r = getRandColor(0, 255);
+            g = getRandColor(0, 255);
+            b = getRandColor(0, 255);
+            a = getRandColor(0, 10) / 10;
+            console.log(r + " " + g + " " + b + " " + a);
+
+            let rgb = header.style.backgroundColor ? 'rgba' : 'rgb';
+            rgb += '(' + r + ',' + g + ',' + b;
+            rgb += header.style.backgroundColor ? ',' + a + ')' : ')';
+
+            //header.style.backgroundColor = rgba(r, g, b, a);
+        }
+        // greeting();
+    </script>
+</head>
+
+<body>
+    <h2>JavaScript</h2>
+    <button onclick="greeting()">greeting</button>
+    <br>
+    <input type="text" id="num1" size="3" width="10">
+    <button onclick="f(num1.value)">제곱</button>
+    <input type="text" id="num1_result" size="10" width="20" disabled="no">
+    <br>
+    <br><br>
+    <h1 id="header">Header</h1>
+    <input type="button" value="change" onclick="changeColor()">
+</body>
+
+</html>

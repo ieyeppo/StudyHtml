@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script>
+        // 변수
+        var pi = 3.141592;
+        var radius = 10;
+        console.log("원의 둘레 : " + (2 * pi * radius));
+        console.log("원의 면적" + (pi * pi * radius))
+
+        // 조건문
+        var leftVal = 35;
+        var rightVal = 108;
+
+        if (leftVal < rightVal) {
+            console.log("True")
+        }
+        else {
+            console.log("false")
+        }
+        console.log("end")
+
+        //날짜
+        var date = new Date();
+        //요소추출
+        var year = date.getFullYear();
+        var month = date.getMonth() + 1;
+        var day = date.getDay();
+        var hour = date.getHours();
+        var min = date.getMinutes();
+        var second = date.getSeconds();
+
+        console.log(year + "-" + month + "-" + day + " " + hour + ":" + min + ":" + second);
+
+        if (hour < 12) {
+            console.log(year + "-" + month + "-" + day + " " + "(AM)" + hour + ":" + min + ":" + second);
+        }
+        else {
+            console.log(year + "-" + month + "-" + day + " " + "(PM)" + (hour - 12) + ":" + min + ":" + second);
+        }
+
+        //배열 array
+        var array = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+        console.log(array);
+
+        //배열 요소 접근
+        console.log(array[0]);
+        console.log(array[4]);
+        console.log(array[10]);
+
+        for (var i = 0; i < array.length; i++) {
+            console.log(array[i]);
+        }
+
+        var j = 0;
+        while (j < array.length) {
+            console.log(array[j]);
+            j++;
+        }
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
