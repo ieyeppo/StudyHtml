@@ -3,11 +3,32 @@
 <head>
     <meta charset='utf-8'>
     <meta http-equiv='X-UA-Compatible' content='IE=edge'>
-    <title>Page Title</title>
+    <title>Responsive test</title>
     <meta name='viewport' content='width=device-width, initial-scale=1, user-scalable=no'>
     <link rel="stylesheet" href="styles/screen.css" media="screen">
     <link rel="stylesheet" href="styles/print.css" media="print">
+    <style>
+        /*모바일*/
+        /* @media (max-width: 499px) {
+            body {
+                background: rgb(250, 143, 218);
+            }
+        } */
+        /*테블릿*/
+        @media (min-width: 500px) and (max-width: 799px) {
+            body {
+                background: rgb(144, 250, 144);
+            }
+        }
+        /*일반웹*/
+        @media (min-width: 800px) {
+            body {
+                background: rgb(167, 217, 250);
+            }
+        }
+    </style>
 </head>
+
 <body>
     <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sapiente laboriosam illum quibusdam delectus reiciendis. Suscipit excepturi sed atque laudantium? Laudantium repellat ratione sapiente, saepe culpa fuga eligendi nemo dolor eos.</h1>
     <p1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id facere hic officiis, adipisci dolor veritatis illum ut voluptatibus quia quasi ipsa dicta voluptas similique saepe exercitationem magnam, inventore, eveniet est.</p1>
