@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <script src='js/jquery-3.5.1.min.js'></script> -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script>
+        //로드 이벤트 // 구세대 유물
+        // window.onload = function(){
+
+        // }
+
+        // jquery 이후에 바뀐 로드 이벤트
+        $(document).ready(function(){
+            // alert("Hello World!");
+
+            $('h1').css('color', 'white');
+            $('h1').css('background', 'hotpink');
+
+            var src = $('script').attr('src');
+            console.log(src);
+        });
+
+        //이미지 속성 변경
+        // $(document).ready(function(){
+        //     $('img').attr('alt', 'jQuery 라이브러리를 사용한 속성 지정');
+        //     $('img').attr('src', 'img/gd.jpg');
+        //     $('img').attr('width', '150px');
+        // });
+
+        // $(document).ready(function(){
+        //     $('img').attr({
+        //         alt : 'jQuery 라이브러리를 사용한 속성 지정',
+        //         src : 'img/gd.jpg',
+        //         width : 200
+        //     });
+        // });
+
+        $(document).ready(function () {
+            $('img').attr({
+                alt: 'jQuery 라이브러리를 사용한 속성 지정',
+                src: function (index) {
+                    var size = (index + 1) * 200;
+
+                    return 'http://placehold.it/' + size + 'x200';
+                }
+            });
+        });
+
+        $(document).ready(function () {
+            // $('.box').css('float', 'left');
+            // $('.box').css('margin', 10);
+            // $('.box').css('width', 200);
+            // $('.box').css('height', 200);
+            // $('.box').css('backgroundColor', 'pink');
+
+            $('.box').css({
+                float : 'left',
+                margin : '10px',
+                width : 200,
+                height : '200',
+                backgroundColor : function(index) {
+                    if(index == 0){
+                        return 'pink';
+                    }
+                    else if(index == 1){
+                        return 'skyblue';
+                    }
+                    else {
+                        return 'yellowgreen';
+                    }
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <h1>jQuery</h1>
+    <h1>Hello World!</h1>
+    <h1>Tuesday</h1>
+    <br><br>
+    <img>
+    <img>
+    <img>
+    <br><br>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</body>
+</html>

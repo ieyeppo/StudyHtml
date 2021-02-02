@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='js/jquery-3.5.1.min.js'></script>
+    <script>
+        //
+        $(document).ready(function(){
+            //로드 후 처리할 이벤트 모두 이 사이에 작성
+            $('input:nth-child(1)').keydown(function(){
+                if(6<=$(this).text.length){
+                    $('input:nth-child(2)').focus();
+                }
+            });
+        });
+
+        window.onload = function () {
+            var count = 0;
+            var image = document.getElementById('image');
+            var frames = [
+                'img/0.png', 'img/1.png', 'img/2.png', 'img/3.png', 'img/4.png',
+                'img/5.png', 'img/6.png', 'img/7.png', 'img/8.png', 'img/9.png',
+                'img/10.png', 'img/11.png', 'img/12.png', 'img/13.png', 'img/14.png',
+            ];
+            setInterval(function () {
+                image.src = frames[count % frames.length];
+                count = count + 1;
+            }, 1000 / 20);
+        };
+    </script>
+</head>
+<body>
+    <img id="image">
+</body>
+</html>
