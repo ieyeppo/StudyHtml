@@ -288,3 +288,13 @@ html { background: #dfd7db; }
     position: relative;
     float: center;
 }
+
+.main-footer-content {
+    margin-top: 25px;
+}
+
+.main-footer-copyright {
+    height: 50px;
+    background : #f353ab;
+    color: white;
+}
