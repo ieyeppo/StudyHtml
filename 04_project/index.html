@@ -10,15 +10,64 @@
     <script src="js/jquery-3.5.1.min.js"></script>
     <script src="js/masonry.pkgd.min.js"></script>
     <script src="js/imagesloaded.pkgd.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            //풀다운 메뉴
+            $('.outer-menu').hover(function () {
+                $(this).find('.inner-menu').css('display', 'block');
+            }, function () {
+                $(this).find('.inner-menu').css('display', 'none');
+            });
+
+            //이미지 로드 확인
+            $('#main-section').imagesLoaded(function () {
+                //jQuery Masonry 플러그인 적용
+                $('#main-section').masonry({
+                    itemSelector: '.paper',
+                    columnWidth: 30
+                    // isAnimated:true
+                });
+            });
+
+
+            //라이트박스 제거 이벤트
+            $('darken-background').click(function () { hideLightBox(); });
+
+            //클릭 이벤트 연결
+            $('.paper').click(function () { showLightBox(); });
+
+            //라이트 박스 제거 이벤트 보조
+            $('#lgithbox').click(function (event) { event.stopPropagation(); });
+        });
+
+        //라이트 박스
+        function showLightBox() {
+            //라이트박스를 보이게 합니다.
+            $('#darken-background').show();
+            $('#darken-background').css('top', $(window).scrollTop());
+
+            // 스크롤 못하게 하기
+            $('body').css('overflow', 'hidden');
+        }
+
+        function hideLightBox() {
+            //라이트박스를 보이지 않게 합니다..
+            $('#darken-background').hide();
+
+            // 스크롤 못하게 하기
+            $('body').css('overflow', 'auto');
+        }
+    </script>
 </head>
 
 <body>
     <!-- 헤더 -->
     <header id="main-header">
-        
+
         <!-- <h1 class="header-title">LATTE IS HORSE</h1> -->
         <img class="header-title-img" src="logo/littleLogo.png">
-        
+
         <div class="header-search-form">
             <form>
                 <input type="search" class="input-search">
@@ -31,6 +80,7 @@
             <ul class="outer-menu">
                 <li>
                     <a href="#" class="outer-menu-title">INFO</a>
+                    <!-- <a href="#" class="outer-menu-title"><img src="Img/button/register.png"></a> -->
                     <ul class="inner-menu">
                         <li><a href="#">데이터</a></li>
                         <li><a href="#">데이터</a></li>
@@ -44,6 +94,7 @@
             <ul class="outer-menu">
                 <li>
                     <a href="#" class="outer-menu-title">MEMBER</a>
+                    <!-- <a href="#" class="outer-menu-title"><img src="Img/button/login.png"></a> -->
                     <ul class="inner-menu">
                         <li><a href="#">데이터</a></li>
                         <li><a href="#">데이터</a></li>
@@ -58,11 +109,17 @@
     <!-- 네비게이션 -->
     <nav id="main-navigation">
         <ul>
-            <li><a href="#" class="main-navigation-content">Following</a></li>
-            <li><a href="#" class="main-navigation-content">Categories</a></li>
-            <li><a href="#" class="main-navigation-content">Everything</a></li>
-            <li><a href="#" class="main-navigation-content">Popular</a></li>
-            <li><a href="#" class="main-navigation-content">Gift</a></li>
+            <li><a href="#" class="main-navigation-content">ALL</a></li>
+            <li><a href="#" class="main-navigation-content">VAPE KIT</a></li>
+            <li><a href="#" class="main-navigation-content">LIQUIDS</a></li>
+            <li><a href="#" class="main-navigation-content">OTHER</a></li>
+            <li><a href="#" class="main-navigation-content">SERVICE</a></li>
+
+            <!-- <li><a href="#" class="main-navigation-content"><img src="Img/button/all.png"></a></li>
+            <li><a href="#" class="main-navigation-content"><img src="Img/button/vape kit.png"></a></li>
+            <li><a href="#" class="main-navigation-content"><img src="Img/button/liquids.png"></a></li>
+            <li><a href="#" class="main-navigation-content"><img src="Img/button/other.png"></a></li>
+            <li><a href="#" class="main-navigation-content"><img src="Img/button/service.png"></a></li> -->
         </ul>
     </nav>
 
@@ -71,41 +128,338 @@
         <!--페이퍼 여러번 복사할 것-->
         <div class="paper">
             <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/328"></a>
+                <a><img width="250" height="270px" src="Img/kit1.png"></a>
             </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <p class="paper-description"><b>SMOK G-Priv 3 Kit</b></p>
             <div class="paper-content">
-                <a class="paper-link" href="#"><img src="https://placekitten.com/30/30"></a>
-                <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem mi, egestas a
-                    facilisis eget, egestas ut magna.</p>
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
             </div>
         </div>
         <!-- 페이퍼 끝 -->
 
         <div class="paper">
             <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/290"></a>
+                <a><img width="250" height="270px" src="Img/kit2.png"></a>
             </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <p class="paper-description"><b>SnowWolf Zephyr 200@ Kit</b></p>
             <div class="paper-content">
-                <a class="paper-link" href="#"><img src="https://placekitten.com/30/30"></a>
-                <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem mi, egestas a
-                    facilisis eget, egestas ut magna.</p>
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
             </div>
         </div>
 
         <div class="paper">
             <div class="paper-holder">
-                <a><img width="190" src="https://placekitten.com/190/200"></a>
+                <a><img width="250" height="270px" src="Img/kit3.png"></a>
             </div>
-            <p class="paper-description">Lorem ipsum dolor sit amet</p>
+            <p class="paper-description"><b>Vaporesso Tarot Mini Kit</b></p>
             <div class="paper-content">
-                <a class="paper-link" href="#"><img src="https://placekitten.com/30/30"></a>
-                <p class="paper-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam sem mi, egestas a
-                    facilisis eget, egestas ut magna.</p>
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
             </div>
         </div>
 
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/kit4.png"></a>
+            </div>
+            <p class="paper-description"><b>Gen S 220W Kit</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank1.png"></a>
+            </div>
+            <p class="paper-description"><b>Falcon II Sub-ohm Tank</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank2.png"></a>
+            </div>
+            <p class="paper-description"><b>TFV16 Sub-Ohm Tan</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank3.png"></a>
+            </div>
+            <p class="paper-description"><b>Zeus Sub-Ohm Tank</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid1.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Marquisa Original</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid2.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Aisu - Aloe Vera</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid3.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Cherry Lime Cola</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid4.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Reds Apple EJuice</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid5.png"></a>
+            </div>
+            <p class="paper-description"><b>Erai Screwbar</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid6.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Cup Corn Cheese & Milh</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid7.jpg"></a>
+            </div>
+            <p class="paper-description"><b>ENFUSE Cream of the Crop</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/bettery.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Charger Baterai 18650</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <!--페이퍼 여러번 복사할 것-->
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/kit1.png"></a>
+            </div>
+            <p class="paper-description"><b>SMOK G-Priv 3 Kit</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+        <!-- 페이퍼 끝 -->
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/kit2.png"></a>
+            </div>
+            <p class="paper-description"><b>SnowWolf Zephyr 200@ Kit</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/kit3.png"></a>
+            </div>
+            <p class="paper-description"><b>Vaporesso Tarot Mini Kit</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/kit4.png"></a>
+            </div>
+            <p class="paper-description"><b>Gen S 220W Kit</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank1.png"></a>
+            </div>
+            <p class="paper-description"><b>Falcon II Sub-ohm Tank</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank2.png"></a>
+            </div>
+            <p class="paper-description"><b>TFV16 Sub-Ohm Tan</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/tank3.png"></a>
+            </div>
+            <p class="paper-description"><b>Zeus Sub-Ohm Tank</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid1.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Marquisa Original</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid2.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Aisu - Aloe Vera</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid3.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Cherry Lime Cola</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid4.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Reds Apple EJuice</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid5.png"></a>
+            </div>
+            <p class="paper-description"><b>Erai Screwbar</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid6.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Cup Corn Cheese & Milh</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/liquid7.jpg"></a>
+            </div>
+            <p class="paper-description"><b>ENFUSE Cream of the Crop</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
+
+
+        <div class="paper">
+            <div class="paper-holder">
+                <a><img width="250" height="270px" src="Img/bettery.jpg"></a>
+            </div>
+            <p class="paper-description"><b>Charger Baterai 18650</b></p>
+            <div class="paper-content">
+                <a class="paper-link" href="#"><img width="70px" src="Img/icon.png"></a>
+                <p class="paper-text"><strike>$69.95</strike> <b>$44.95</b></p>
+            </div>
+        </div>
     </section>
 
     <!--라이트 박스-->
@@ -125,7 +479,7 @@
     </div>
     <!-- 푸터 -->
     <footer id="main-footer">
-
+       
     </footer>
 </body>
 
